@@ -626,7 +626,7 @@ function ShiftApp({ reports, onSubmit, onBack, staffMode, ownerMode, editMode })
       <div style={{fontSize:64}}>✅</div>
       <div style={{fontSize:22,fontWeight:800,color:"#1a2e1a",marginTop:16}}>הדוח נשלח!</div>
       <div style={{fontSize:14,color:"#888",marginTop:8}}>משמרת {shift==="lunch"?"צהריים":"ערב"} — {dateStr}</div>
-      <button style={{marginTop:24,...S.nextBtn,width:200}} onClick={onBack}>חזרה לתפריט</button>
+      <button style={{marginTop:24,...S.nextBtn,width:200}} onClick={()=>{setSubmitted(false);setShift(null);setForm(emptyForm());setStep(1);}}>דוח נוסף</button>
     </div>
   );
 
@@ -1349,3 +1349,4 @@ const S = {
   shiftBtn: { width:"100%", maxWidth:300, border:"2px solid", borderRadius:16, padding:"24px 16px", display:"flex", flexDirection:"column", alignItems:"center", gap:8, cursor:"pointer" },
   homeBtn: { width:240, border:"none", borderRadius:16, padding:"20px 16px", display:"flex", flexDirection:"column", alignItems:"center", gap:8, cursor:"pointer" },
 };
+
